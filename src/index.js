@@ -1,8 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+} from 'react-router-dom';
+import styles from './index.module.css';
+import {routes} from './route.js';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+global.windowHeight = window.innerHeight
+                     || document.documentElement.clientHeight
+                     || document.body.clientHeight;
+global.windowWidth = window.innerWidth
+                     || document.documentElement.clientWidth
+                     || document.body.clientWidth;
+
+let renderRoute = (item,index)=>{
+
+    return(
+        <Route key={index} path={item.url} component={item.component}/>
+    );
+
+};
+
+ReactDOM.render(
+    <div>
+        <Router>
+            <Switch>
+                {routes.map(renderRoute)}
+            </Switch>
+        </Router>
+    </div>
+    , document.getElementById('root'));
+
