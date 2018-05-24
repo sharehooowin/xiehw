@@ -18,7 +18,7 @@ global.windowWidth = window.innerWidth
 let renderRoute = (item,index)=>{
 
     return(
-        <Route key={index} path={item.url} component={item.component}/>
+        <Route key={index} exact path={item.url} component={item.component}/>
     );
 
 };

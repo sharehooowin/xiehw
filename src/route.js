@@ -4,4 +4,7 @@ export const routes =  [
         url:'/',
         component:Welcome
     },
+    {
+
+    }
 ];

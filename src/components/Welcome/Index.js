@@ -11,9 +11,9 @@ export default class Welcome extends Component{
     render(){
         return(
             <div>
-                <Page1 id="page_1_0"/>
-                <Page2 id="page_2_0"/>
-                <div>11</div>
+                <Page1 {...this.props} id="page_1_0"/>
+                <Page2 {...this.props} id="page_2_0"/>
+                <Page2 {...this.props} id="page_3_0"/>
             </div>
         )
     }
